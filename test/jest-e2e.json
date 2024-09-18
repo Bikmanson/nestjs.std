@@ -1,9 +1,26 @@
 {
+<<<<<<< HEAD
   "moduleFileExtensions": ["js", "json", "ts"],
+=======
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "ts"
+  ],
+>>>>>>> 976f9379 (first commit)
   "rootDir": ".",
   "testEnvironment": "node",
   "testRegex": ".e2e-spec.ts$",
   "transform": {
     "^.+\\.(t|j)s$": "ts-jest"
+<<<<<<< HEAD
   }
 }
+=======
+  },
+  "moduleNameMapper": {
+    "@lib/cache/(.*)": "<rootDir>/../libs/cache/src/$1",
+    "@lib/cache": "<rootDir>/../libs/cache/src"
+  }
+}
+>>>>>>> 976f9379 (first commit)
