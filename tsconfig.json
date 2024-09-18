@@ -16,9 +16,6 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-<<<<<<< HEAD
-    "noFallthroughCasesInSwitch": false
-=======
     "noFallthroughCasesInSwitch": false,
     "paths": {
       "@app": [
@@ -34,6 +31,5 @@
         "libs/cache/src/*"
       ]
     }
->>>>>>> 976f9379 (first commit)
   }
 }

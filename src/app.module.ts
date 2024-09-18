@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-
-@Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
-=======
 import {Module} from '@nestjs/common';
 
 import {CacheModule} from "@lib/cache";
@@ -28,6 +18,5 @@ import {ConfigModule} from "@nestjs/config";
         }),
     ],
     controllers: [AppController],
->>>>>>> 976f9379 (first commit)
 })
 export class AppModule {}
