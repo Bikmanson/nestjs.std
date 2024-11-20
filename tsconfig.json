@@ -25,10 +25,22 @@
         "src/*"
       ],
       "@lib/cache": [
-        "libs/cache/src"
+        "libs/cache/src/"
       ],
       "@lib/cache/*": [
         "libs/cache/src/*"
+      ],
+      "@product-storage": [
+        "apps/product-storage/src/"
+      ],
+      "@product-storage/*": [
+        "apps/product-storage/src/*"
+      ],
+      "@user-management": [
+        "apps/user-management/src/"
+      ],
+      "@user-management/*": [
+        "apps/user-management/src/*"
       ]
     }
   }

@@ -7,6 +7,33 @@
     "webpack": true
   },
   "projects": {
+    "product-storage": {
+      "type": "application",
+      "root": "apps/product-storage",
+      "entryFile": "main",
+      "sourceRoot": "apps/product-storage/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/product-storage/tsconfig.app.json"
+      }
+    },
+    "user-management": {
+      "type": "application",
+      "root": "apps/user-management",
+      "entryFile": "main",
+      "sourceRoot": "apps/user-management/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/product-storage/tsconfig.app.json"
+      }
+    },
+    "gateway": {
+      "type": "application",
+      "root": "apps/gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/gateway/tsconfig.app.json"
+      }
+    },
     "cache": {
       "type": "library",
       "root": "libs/cache",
