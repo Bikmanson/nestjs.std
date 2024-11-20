@@ -4,7 +4,6 @@ import { CacheModule } from '@lib/cache';
 
 import { AppController } from '@app/app.controller';
 import { ConfigModule } from '@nestjs/config';
-import { ProductStorageModule } from '@product-storage/product-storage.module';
 
 @Module({
   imports: [
@@ -17,7 +16,6 @@ import { ProductStorageModule } from '@product-storage/product-storage.module';
       host: process.env.REDIS_HOST,
       port: Number(process.env.REDIS_PORT),
     }),
-    ProductStorageModule,
   ],
   controllers: [AppController],
 })

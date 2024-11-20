@@ -9,4 +9,4 @@ import { CacheModule } from '@lib/cache/src';
   providers: [AppService],
   exports: [AppController],
 })
-export class ProductStorageModule {}
+export class AppModule {}
