@@ -18,18 +18,6 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@app": [
-        "src/"
-      ],
-      "@app/*": [
-        "src/*"
-      ],
-      "@lib/cache": [
-        "libs/cache/src/"
-      ],
-      "@lib/cache/*": [
-        "libs/cache/src/*"
-      ],
       "@product-storage": [
         "apps/product-storage/src/"
       ],
@@ -41,6 +29,12 @@
       ],
       "@user-management/*": [
         "apps/user-management/src/*"
+      ],
+      "@lib/cache": [
+        "libs/cache/src"
+      ],
+      "@lib/cache/*": [
+        "libs/cache/src/*"
       ]
     }
   }

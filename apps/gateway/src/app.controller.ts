@@ -1,12 +1,21 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param, Post, Query } from '@nestjs/common';
+
 import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly service: AppService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Get('product/:name')
+  getProduct(@Param('name') name: any): Promise<any> {
+    return this.service.getProduct(name);
   }
+
+  // @Post('cache')
+  // addToCache(
+  //   @Query('key') key: CacheKey,
+  //   @Query('value') value: CacheValue,
+  // ): Promise<CacheSetResponse> {
+  //   return this.cache.set(key, value);
+  // }
 }

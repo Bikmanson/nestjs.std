@@ -1,4 +1,4 @@
 export interface ModuleOptionsInterface {
-    host: string;
-    port: number;
+  host: string;
+  port: number;
 }

@@ -1,8 +1,8 @@
 import { RedisModule } from '@nestjs-modules/ioredis';
 import { Module } from '@nestjs/common';
 
-import { CacheService } from '@lib/cache/services/cache.service';
-import { ModuleOptionsInterface } from '@lib/cache/interfaces/module-options.interface';
+import { CacheService } from './services/cache.service';
+import { ModuleOptionsInterface } from './interfaces/module-options.interface';
 
 @Module({})
 export class CacheModule {
