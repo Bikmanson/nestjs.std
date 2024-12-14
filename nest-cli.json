@@ -28,7 +28,7 @@
       "entryFile": "main",
       "sourceRoot": "apps/user-management/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/product-storage/tsconfig.app.json",
+        "tsConfigPath": "apps/user-management/tsconfig.app.json",
         "assets": [
           "*.env"
         ]
