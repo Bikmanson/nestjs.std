@@ -11,7 +11,7 @@ import { AppService } from '@user-management/app.service';
 export class AppController {
   constructor(private readonly service: AppService) {}
 
-  @Get('email')
+  @Get()
   @ApiParam({ name: 'email', required: true, description: "The user's email" })
   @ApiResponse({ status: 200, description: 'The user object' })
   @ApiResponse({ status: 404, description: 'User is not found' })
