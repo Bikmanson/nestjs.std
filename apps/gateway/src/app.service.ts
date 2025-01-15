@@ -15,9 +15,9 @@ export class AppService {
   constructor(private readonly http: HttpService) {}
 
   async getProduct(name: string): Promise<IProduct> {
-    const { data } = await firstValueFrom<AxiosResponse>(
+    const { data } = await firstValueFrom<AxiosResponse<IProduct>>(
       this.http
-        .get(`http://localhost:3011/product-storage`, {
+        .get<IProduct>(`http://localhost:3011/product-storage`, {
           params: { name },
         })
         .pipe(
@@ -29,10 +29,11 @@ export class AppService {
 
     return data;
   }
+
   async getUser(email: string): Promise<IUser> {
-    const { data } = await firstValueFrom<AxiosResponse>(
+    const { data } = await firstValueFrom<AxiosResponse<IUser>>(
       this.http
-        .get(`http://localhost:3012/user-management`, {
+        .get<IUser>(`http://localhost:3012/user-management`, {
           params: { email },
         })
         .pipe(
