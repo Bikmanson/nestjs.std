@@ -1,18 +1,45 @@
 import { catchError, firstValueFrom } from 'rxjs';
 import { AxiosError, AxiosResponse } from 'axios';
 
-import { Injectable } from '@nestjs/common';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
+import { JwtService } from '@nestjs/jwt';
 
-import { ProductDto } from './dtos/product.dto';
-import { UserDto } from './dtos/user.dto';
+import { CredDto } from '@app/dtos/cred.dto';
+import { ProductDto } from '@app/dtos/product.dto';
+import { UserDto } from '@app/dtos/user.dto';
 
-import { IUser } from './interfaces/user.interface';
-import { IProduct } from './interfaces/product.interface';
+import { ISign } from '@app/interfaces/sign.interface';
+import { IUser } from '@app/interfaces/user.interface';
+import { IProduct } from '@app/interfaces/product.interface';
 
 @Injectable()
 export class AppService {
-  constructor(private readonly http: HttpService) {}
+  constructor(
+    private readonly http: HttpService,
+    private readonly jwt: JwtService,
+  ) {}
+
+  async sign({ login, pass }: CredDto): Promise<ISign> {
+    const users = [
+      {
+        login: 'vitya',
+        pass: 'qweqwe',
+      },
+      {
+        login: 'vika',
+        pass: 565,
+      },
+    ];
+
+    const user = users.find(({ login: userLogin }) => userLogin === login);
+
+    if (user?.pass !== pass) {
+      throw new UnauthorizedException();
+    }
+
+    return { token: await this.jwt.signAsync({ user: login }) };
+  }
 
   async getProduct(name: string): Promise<IProduct> {
     const { data } = await firstValueFrom<AxiosResponse<IProduct>>(

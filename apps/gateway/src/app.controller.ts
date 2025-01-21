@@ -1,14 +1,21 @@
 import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 
-import { AppService } from './app.service';
-import { ProductDto } from './dtos/product.dto';
-import { UserDto } from './dtos/user.dto';
+import { AppService } from '@app/app.service';
+import { ProductDto } from '@app/dtos/product.dto';
+import { UserDto } from '@app/dtos/user.dto';
+import { CredDto } from '@app/dtos/cred.dto';
 import { IProduct } from '@product-storage/interfaces/product.interface';
 import { ApiBody, ApiParam, ApiResponse } from '@nestjs/swagger';
+import { ISign } from '@app/interfaces/sign.interface';
 
 @Controller()
 export class AppController {
   constructor(private readonly service: AppService) {}
+
+  @Get('sign')
+  sign(@Body() cred: CredDto): Promise<ISign> {
+    return this.service.sign(cred);
+  }
 
   @Get('product')
   @ApiParam({ name: 'name', required: true, description: 'The product name' })

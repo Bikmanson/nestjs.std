@@ -18,6 +18,12 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
+      "@app": [
+        "apps/gateway/src/"
+      ],
+      "@app/*": [
+        "apps/gateway/src/*"
+      ],
       "@product-storage": [
         "apps/product-storage/src/"
       ],
