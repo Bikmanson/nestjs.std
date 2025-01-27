@@ -7,6 +7,7 @@ import { HttpModule } from '@nestjs/axios';
 
 import { AppController } from '@app/app.controller';
 import { AppService } from '@app/app.service';
+import { AuthGuard } from '@app/guards/auth.guard';
 
 @Module({
   imports: [
@@ -15,6 +16,6 @@ import { AppService } from '@app/app.service';
     JwtModule.register({ secret: process.env.JWT_SECRET }),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, AuthGuard],
 })
 export class AppModule {}
